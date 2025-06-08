@@ -6,6 +6,17 @@
 #include "assert.h"
 #include "stdio.h"
 
+// void test_ft_memcpy(void)
+// {
+//     char buf1[16], buf2[16];
+//
+//     strcpy(buf1, "hello world");
+//     ft_memcpy(buf2, buf1, strlen(buf1) + 1);
+//     assert(strcmp(buf1, buf2) == 0);
+//
+//     puts("ft_memcpy test passed");
+// }
+
 void test_ft_memset(void)
 {
     char buf1[10], buf2[10];

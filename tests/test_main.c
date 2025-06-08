@@ -1,7 +1,21 @@
+#include <string.h>
+#include <secure/_string.h>
+
 #include "libft/libft.h"
 #include "libft/ft_getopt.h"
 #include "assert.h"
 #include "stdio.h"
+
+void test_ft_memset(void)
+{
+    char buf1[10], buf2[10];
+
+    memset(buf1, 'x', sizeof(buf1));
+    ft_memset(buf2, 'x', sizeof(buf2));
+
+    assert(memcmp(buf1, buf2, sizeof(buf1)) == 0);
+    puts("ft_memset test passed");
+}
 
 static void test_posix_style(void)
 {

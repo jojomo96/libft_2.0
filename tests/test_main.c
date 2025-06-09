@@ -17,6 +17,19 @@
 //     puts("ft_memcpy test passed");
 // }
 
+void test_ft_strtol(void)
+{
+    char *end;
+
+    assert(ft_strtol("42", &end, 10) == 42 && *end == '\0');
+    assert(ft_strtol("   -101", &end, 2) == -5);
+    assert(ft_strtol("0xFF", &end, 0) == 255);
+    assert(ft_strtol("0755", &end, 0) == 493);
+    assert(ft_strtol("123abc", &end, 10) == 123 && *end == 'a');
+    assert(ft_strtol("deadBEEF", &end, 16) == 0xDEADBEEF);
+    assert(ft_strtol("zzz", &end, 36) == (35 + 36 * 35 + 36 * 36 * 35));
+}
+
 void test_ft_memset(void)
 {
     char buf1[10], buf2[10];
@@ -83,6 +96,7 @@ int main(void) {
     test_ft_strchr();
     test_posix_style();
     test_reentrant();
+    test_ft_strtol();
 
     printf("All tests passed!\n");
     return 0;

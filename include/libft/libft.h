@@ -11,7 +11,10 @@ int ft_atoi(const char *str);
 double ft_atof(const char *str);
 long ft_strtol(const char *str, char **endptr, int base);
 int ft_isdigit( int c);
+int ft_isspace(int c);
 int ft_strlen(const char *s);
+int ft_str_is_number(const char *s);
+int ft_str_is_double(const char *s);
 
 
 

@@ -8,8 +8,7 @@ file(GLOB_RECURSE LIB_SOURCES CONFIGURE_DEPENDS
         "${PROJECT_SOURCE_DIR}/src/*.c")
 
 # 2.b  Build the library (static by default; very portable)
-add_library(libft STATIC ${LIB_SOURCES}
-        src/ft_atof.c)
+add_library(libft STATIC ${LIB_SOURCES})
 
 target_include_directories(libft
         PUBLIC                               # <- users of the lib see this dir

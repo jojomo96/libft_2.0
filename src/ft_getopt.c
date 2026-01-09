@@ -35,14 +35,16 @@ char *ft_optarg = NULL;
 /*  Internal worker: does all the actual parsing                         */
 /* ────────────────────────────────────────────────────────────────────── */
 static int
-_getopt_internal(int *p_optind,
-                 int *p_optopt,
-                 int *p_opterr,
-                 char **p_optarg,
-                 int *p_optpos,
-                 int argc,
-                 char *const argv[],
-                 const char *optstring) {
+_getopt_internal(
+    int *p_optind,
+    int *p_optopt,
+    int *p_opterr,
+    char **p_optarg,
+    int *p_optpos,
+    int argc,
+    char *const argv[],
+    const char *optstring
+) {
     /* Ensure optpos starts at 1 the first time */
     if (*p_optpos < 1)
         *p_optpos = 1;
@@ -105,7 +107,8 @@ _getopt_internal(int *p_optind,
         *p_optopt = opt;
         if (*p_opterr)
             fprintf(stderr,
-                    "ft_getopt: option '-%c' requires an argument\n", opt);
+                    "ft_getopt: option '-%c' requires an argument\n", opt
+            );
         ++(*p_optind);
         *p_optpos = 1;
         return ':'; /* POSIX signal  */
@@ -135,19 +138,25 @@ ft_getopt(int argc, char *const argv[], const char *optstring) {
     static int optpos = 1;
     return _getopt_internal(&ft_optind, &ft_optopt, &ft_opterr,
                             &ft_optarg, &optpos,
-                            argc, argv, optstring);
+                            argc, argv, optstring
+    );
 }
 
 /* ────────────────────────────────────────────────────────────────────── */
 /*  Re-entrant wrapper (caller provides state struct)                    */
 /* ────────────────────────────────────────────────────────────────────── */
 int
-ft_getopt_r(ft_getopt_state *st,
-            int argc, char *const argv[], const char *optstring) {
+ft_getopt_r(
+    ft_getopt_state *st,
+    int argc,
+    char *const argv[],
+    const char *optstring
+) {
     if (!st) /* defensive */
         return -1;
 
     return _getopt_internal(&st->optind, &st->optopt, &st->opterr,
                             &st->optarg, &st->_optpos,
-                            argc, argv, optstring);
+                            argc, argv, optstring
+    );
 }

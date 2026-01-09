@@ -8,8 +8,7 @@
  *   - optional endptr receives the stopping point
  *   - handles "0x" or "0" prefix for base 0
  */
-long ft_strtol(const char *str, char **endptr, int base)
-{
+long ft_strtol(const char *str, char **endptr, int base) {
     const char *s = str;
     long result = 0;
     int sign = 1;
@@ -64,9 +63,9 @@ long ft_strtol(const char *str, char **endptr, int base)
     }
 
     if (s == start && endptr)
-        *endptr = (char *)str;  // No digits were read
+        *endptr = (char *) str; // No digits were read
     else if (endptr)
-        *endptr = (char *)s;
+        *endptr = (char *) s;
 
     return result * sign;
 }

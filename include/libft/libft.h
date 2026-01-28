@@ -16,6 +16,7 @@ int ft_isspace(int c);
 int ft_strlen(const char *s);
 int ft_str_is_number(const char *s);
 int ft_str_is_double(const char *s);
+double ft_sqrt(double x);
 
 
 

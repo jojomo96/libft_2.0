@@ -16,9 +16,7 @@ int ft_isspace(int c);
 int ft_strlen(const char *s);
 int ft_str_is_number(const char *s);
 int ft_str_is_double(const char *s);
+int ft_atoll_checked(const char *str, long long *out);
 double ft_sqrt(double x);
-
-
-
 
 #endif //FT_LIBFT_H

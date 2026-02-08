@@ -19,4 +19,14 @@ int ft_str_is_double(const char *s);
 int ft_atoll_checked(const char *str, long long *out);
 double ft_sqrt(double x);
 
+/* -------------------------------------------------------------------------- */
+/* OUTPUT HELPERS                                                             */
+/* -------------------------------------------------------------------------- */
+
+void   ft_putchar_fd(char c, int fd);
+void   ft_putstr_fd(const char *s, int fd);
+void   ft_putsize_fd(size_t n, int fd);
+void   ft_puthex_fd(size_t n, int uppercase, int fd);
+void   ft_putptr_fd(const void *p, int fd);
+
 #endif //FT_LIBFT_H

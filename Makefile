@@ -3,7 +3,7 @@ CC          ?= cc
 AR          ?= ar
 RANLIB      ?= ranlib
 
-CFLAGS      ?= -Wall -Wextra -Werror -std=gnu17
+CFLAGS      ?= -Wall -Wextra -Werror -std=gnu17 -fPIC
 
 INC_DIR     := include
 SRC_DIR     := src
